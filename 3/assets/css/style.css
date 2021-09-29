@@ -36,6 +36,38 @@ a {
   background: #262626;
 }
 
+@keyframes gradient {
+  0% {
+    opacity: 0;
+    background-position: 0 50%;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    background-position: 100% 50%;
+  }
+}
+@-webkit-keyframes gradient {
+  0% {
+    opacity: 0;
+    background-position: 0 50%;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    background-position: 100% 50%;
+  }
+}
 *,
 ::after,
 ::before {
@@ -1926,18 +1958,43 @@ header.fixed {
 section.about {
   text-align: center;
 }
-section.about img {
+section.about .container {
+  position: relative;
+  z-index: 1;
+}
+section.about .container img {
   height: 200px;
   width: 200px;
   border-radius: 100%;
 }
-section.about h3 {
+section.about .container h3 {
   font-size: 1.5rem;
 }
-section.about p {
+section.about .container p {
   font-size: 1.3rem;
   max-width: 500px;
   margin: 0 auto;
+}
+section.about .container p span {
+  text-decoration: underline;
+}
+section.about .container p span:hover {
+  cursor: pointer;
+}
+section.about #wizard-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  display: none;
+}
+section.about #wizard-overlay.magic {
+  display: block;
+  background: radial-gradient(circle, rgba(202, 37, 187, 0.8631827731) 0%, #7022b0 31%, #1f92e1 72%, #1bf0f1 100%);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
 }
 
 section.challenges .challenge {
@@ -1950,6 +2007,38 @@ section.challenges .challenge {
 }
 section.challenges .challenge:hover {
   transform: translateY(-2px);
+}
+
+#wizard-img {
+  opacity: 0;
+  pointer-events: none;
+  height: auto;
+  max-width: 350px;
+  width: 100%;
+  position: fixed;
+  right: 25px;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  transition: opacity 350ms;
+}
+#wizard-img.show {
+  opacity: 1;
+}
+@media (max-width: 1199.98px) {
+  #wizard-img {
+    max-width: 300px;
+  }
+}
+@media (max-width: 991.98px) {
+  #wizard-img {
+    max-width: 250px;
+  }
+}
+@media (max-width: 767.98px) {
+  #wizard-img {
+    display: none;
+  }
 }
 
 footer {
