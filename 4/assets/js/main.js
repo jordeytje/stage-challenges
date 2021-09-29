@@ -37,4 +37,3 @@ function addRow(amount, divide) {
 }
 
 divide(children);
-// todo optimize this
