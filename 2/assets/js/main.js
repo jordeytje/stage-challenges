@@ -1,5 +1,3 @@
-// Fizzbuzz
-
 for (let i = 1; i <= 100; i++) {
     if (i % 15 === 0) {
         addVal(`${i} FB`);
