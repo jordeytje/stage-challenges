@@ -38,10 +38,19 @@ const makeReadable = (input) => {
     return arr;
 };
 
-
+// regex is a pain, kom ik zo bij terug
 function cleanUp(input) {
+    const arr = [];
     console.log('cleanup');
     console.log(input);
+
+    input.map(e => {
+        const filter = /^[a-zA-Z\s]*$/;
+        e = e.trim().replace(filter, '');
+        arr.push(e);
+    });
+
+    console.log(arr);
 }
 
 cleanUp(makeReadable(text));
