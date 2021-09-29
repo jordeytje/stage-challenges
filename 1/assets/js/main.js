@@ -25,8 +25,6 @@ const text = "><Hello#521paddawan2==)\n" +
     "    peace()and][3justice)&^}in@{the^}$\n" +
     "galaxy,8to##settle%@the@#%conflict....\n";
 
-console.log(text);
-
 const makeReadable = (input) => {
     const arr = [];
     input = input.split('\n');
@@ -38,19 +36,20 @@ const makeReadable = (input) => {
     return arr;
 };
 
-// regex is a pain, kom ik zo bij terug
 function cleanUp(input) {
-    const arr = [];
-    console.log('cleanup');
-    console.log(input);
-
     input.map(e => {
-        const filter = /^[a-zA-Z\s]*$/;
-        e = e.trim().replace(filter, '');
-        arr.push(e);
+        e = e.replace(/[^a-zA-Z]+/g, ' ').trim();
+        append(e);
     });
-
-    console.log(arr);
 }
 
 cleanUp(makeReadable(text));
+
+function append(input) {
+    const outputElem = document.querySelector('.text');
+    const elem = document.createElement('p');
+    elem.innerHTML = input;
+    outputElem.append(elem);
+}
+
+// todo optimize this
