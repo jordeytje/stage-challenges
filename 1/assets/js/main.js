@@ -25,25 +25,15 @@ const text = "><Hello#521paddawan2==)\n" +
     "    peace()and][3justice)&^}in@{the^}$\n" +
     "galaxy,8to##settle%@the@#%conflict....\n";
 
-const makeReadable = (input) => {
-    const arr = [];
+
+function cleanUp(input) {
     input = input.split('\n');
 
     input.map(e => {
-        e !== "" ? arr.push(e) : null;
-    });
-
-    return arr;
-};
-
-function cleanUp(input) {
-    input.map(e => {
         e = e.replace(/[^a-zA-Z]+/g, ' ').trim();
-        append(e);
+        append(e); //had het hier ook basically kunnen loggen
     });
 }
-
-cleanUp(makeReadable(text));
 
 function append(input) {
     const outputElem = document.querySelector('.text');
@@ -52,4 +42,4 @@ function append(input) {
     outputElem.append(elem);
 }
 
-// todo optimize this
+cleanUp(text);

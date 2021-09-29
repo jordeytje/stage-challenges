@@ -1,0 +1,27 @@
+//variables
+$black: #000;
+$yellow: #feda4a;
+
+//elements
+body {
+  background: $black;
+  text-align: center;
+}
+
+//custom
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $yellow;
+
+  img {
+    margin-left: 15px;
+    height: 80px;
+  }
+}
+
+.text {
+  color: $yellow;
+  font-family: 'Pathway Gothic One', sans-serif;
+}

@@ -1,10 +1,22 @@
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+body {
+  background: #000;
+  text-align: center;
 }
 
-img {
-    margin-left: 15px;
-    height: 80px;
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #feda4a;
 }
+.title img {
+  margin-left: 15px;
+  height: 80px;
+}
+
+.text {
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */
