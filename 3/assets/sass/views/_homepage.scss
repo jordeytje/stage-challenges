@@ -57,8 +57,26 @@ section.challenges {
     -webkit-box-shadow: 2px 2px 2px 2px transparentize($black, 0.95);
     box-shadow: 2px 2px 2px 2px transparentize($black, 0.95);
 
+    h3 {
+      @include media-breakpoint-down(md) {
+        min-height: 44px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        min-height: unset;
+      }
+    }
+
     p {
       min-height: 40px;
+
+      @include media-breakpoint-down(md) {
+        min-height: 55px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        min-height: unset;
+      }
 
       &.btn {
         min-height: unset;

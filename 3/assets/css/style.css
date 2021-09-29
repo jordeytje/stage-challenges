@@ -2005,8 +2005,28 @@ section.challenges .challenge {
   -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
+@media (max-width: 991.98px) {
+  section.challenges .challenge h3 {
+    min-height: 44px;
+  }
+}
+@media (max-width: 575.98px) {
+  section.challenges .challenge h3 {
+    min-height: unset;
+  }
+}
 section.challenges .challenge p {
   min-height: 40px;
+}
+@media (max-width: 991.98px) {
+  section.challenges .challenge p {
+    min-height: 55px;
+  }
+}
+@media (max-width: 575.98px) {
+  section.challenges .challenge p {
+    min-height: unset;
+  }
 }
 section.challenges .challenge p.btn {
   min-height: unset;
