@@ -2,11 +2,11 @@
 
 for (let i = 1; i <= 100; i++) {
     if (i % 15 === 0) {
-        addVal(`${i} FizzBuzz`);
+        addVal(`${i} FB`);
     } else if (i % 3 === 0) {
-        addVal(`${i} Fizz`);
+        addVal(`${i} F`);
     } else if (i % 5 === 0) {
-        addVal(`${i} Buzz`);
+        addVal(`${i} B`);
     } else {
         addVal(i);
     }
