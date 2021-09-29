@@ -1,0 +1,26 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $light-gray;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+section {
+  position: relative;
+  padding-top: 50px;
+}
+
+ul {
+  margin: 0;
+
+  li {
+    padding-left: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}

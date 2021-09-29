@@ -1,3 +1,41 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f5f5;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+section {
+  position: relative;
+  padding-top: 50px;
+}
+
+ul {
+  margin: 0;
+}
+ul li {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 350ms;
+}
+.btn:hover {
+  background: #262626;
+}
+
 *,
 ::after,
 ::before {
@@ -1842,6 +1880,85 @@ button:not(:disabled) {
 .px-lg-5 {
     padding-left: 3rem !important;
   }
+}
+header {
+  background: #fff;
+  border-bottom: 1px solid #31c8fa;
+  z-index: 1;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .logo a {
+  color: #000;
+  transition: 350ms;
+  font-size: 1.5rem;
+}
+header .container .logo a:hover {
+  color: gray;
+}
+header .container .menu ul li {
+  list-style-type: none;
+  margin-right: 10px;
+  display: inline-block;
+}
+header .container .menu ul li a {
+  padding: 5px;
+  color: #000;
+  font-size: 1.1rem;
+  transition: 350ms;
+}
+header .container .menu ul li a:hover {
+  color: gray;
+}
+header .container .menu ul li:last-of-type {
+  margin-right: 0;
+}
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+section.about {
+  text-align: center;
+}
+section.about img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+}
+section.about h3 {
+  font-size: 1.5rem;
+}
+section.about p {
+  font-size: 1.3rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+section.challenges .challenge {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  transition: transform 350ms;
+  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+section.challenges .challenge:hover {
+  transform: translateY(-2px);
+}
+
+footer {
+  background: #2c2e2f;
+  margin-top: 50px;
+}
+footer p {
+  text-align: center;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

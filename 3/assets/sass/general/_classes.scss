@@ -1,0 +1,12 @@
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: $black;
+  color: $white;
+  border-radius: 5px;
+  transition: background $transition-time;
+
+  &:hover {
+    background: lighten($black, 15);
+  }
+}

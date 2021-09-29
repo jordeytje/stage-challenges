@@ -1,0 +1,53 @@
+header {
+  background: $white;
+  border-bottom: 1px solid $primary-color;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      a {
+        color: $black;
+        transition: $transition-time;
+        font-size: 1.5rem;
+
+        &:hover {
+          color: lighten($black, 50);
+        }
+      }
+    }
+
+    .menu {
+      ul li {
+        list-style-type: none;
+        margin-right: 10px;
+        display: inline-block;
+
+        a {
+          padding: 5px;
+          color: $black;
+          font-size: 1.1rem;
+          transition: $transition-time;
+
+          &:hover {
+            color: lighten($black, 50);
+          }
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
