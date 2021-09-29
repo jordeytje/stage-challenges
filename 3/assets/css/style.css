@@ -2005,6 +2005,12 @@ section.challenges .challenge {
   -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
+section.challenges .challenge p {
+  min-height: 40px;
+}
+section.challenges .challenge p.btn {
+  min-height: unset;
+}
 section.challenges .challenge:hover {
   transform: translateY(-2px);
 }

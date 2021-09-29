@@ -57,6 +57,14 @@ section.challenges {
     -webkit-box-shadow: 2px 2px 2px 2px transparentize($black, 0.95);
     box-shadow: 2px 2px 2px 2px transparentize($black, 0.95);
 
+    p {
+      min-height: 40px;
+
+      &.btn {
+        min-height: unset;
+      }
+    }
+
     &:hover {
       transform: translateY(-2px);
     }
