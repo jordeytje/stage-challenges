@@ -23,15 +23,39 @@ const text = "><Hello#521paddawan2==)\n" +
     "    secretly@#]dispatched!!two%%$Jedi%:;\n" +
     "    Knights,%the::guardians*&of+-\n" +
     "    peace()and][3justice)&^}in@{the^}$\n" +
-    "galaxy,8to##settle%@the@#%conflict....\n";
+    "galaxy,8to##settle%@the@#%conflict....\n" +
+    "De pagina zal zichzelf herladen wanneer deze animatie klaar is";
 
+const audioElem = document.getElementById('audio-elem');
+const btn = document.querySelector('.btn-success');
+
+btn.addEventListener('click', animation);
+
+cleanUp(text);
+
+function animation() {
+    const overlay = document.querySelector('.overlay');
+    const container = document.querySelector('.outer-container');
+
+    // Would be better to start the animations based on callbacks, but CSS delay it is for now.
+    overlay.classList.add('started');
+    container.classList.add('started');
+
+    // force reload when animation ends
+    container.addEventListener('animationend', () => {
+        location.reload();
+    });
+
+    audioElem.volume = 0.5;
+    setTimeout(() => {audioElem.play();}, 5000)
+}
 
 function cleanUp(input) {
     input = input.split('\n');
 
     input.map(e => {
         e = e.replace(/[^a-zA-Z]+/g, ' ').trim();
-        append(e); //had het hier ook basically kunnen loggen
+        append(e);
     });
 }
 
@@ -41,5 +65,3 @@ function append(input) {
     elem.innerHTML = input;
     outputElem.append(elem);
 }
-
-cleanUp(text);

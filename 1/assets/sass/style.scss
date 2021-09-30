@@ -6,22 +6,140 @@ $yellow: #feda4a;
 body {
   background: $black;
   text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
-//custom
-.title {
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $yellow;
 
-  img {
-    margin-left: 15px;
-    height: 80px;
+  .intro, .inner-title {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .start .btn {
+    width: 200px;
+    font-family: sans-serif;
+  }
+
+  .intro p {
+    color: #4bd5ee;
+    font-size: 3rem;
+    max-width: 800px;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .inner-title p {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: $yellow;
+    -webkit-text-stroke-width: 2px;
+    font-size: 3rem;
+    transform: scale(5);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 2.8rem;
+  }
+
+  &.started {
+    .start {
+      display: none;
+    }
+
+    .intro {
+      animation: fadeIntro 5s linear forwards;
+    }
+
+    .inner-title {
+      animation: animateTitle 7s 5s ease-out forwards;
+    }
   }
 }
 
-.text {
-  color: $yellow;
-  font-family: 'Pathway Gothic One', sans-serif;
+//custom
+.outer-container {
+  height: 100%;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+  font-size: 5rem;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  .text {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    text-align: justify;
+
+    p {
+      color: $yellow;
+      letter-spacing: 5px;
+      font-weight: bold;
+    }
+  }
+
+  &.started .text {
+    animation: animateText 90s 12s linear forwards;
+  }
+}
+
+//keyframes
+@keyframes animateText {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: -500%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIntro {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateTitle {
+  0% {
+    opacity: 0;
+    transform: scale(5);
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
 }
